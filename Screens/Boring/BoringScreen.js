@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-class NewsFeedScreen extends React.Component {
+class BoringScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>NewsFeed Screen</Text>
+        <Text>Boring Screen</Text>
       </View>
     );
   }
 }
 
-export default NewsFeedScreen;
+export default BoringScreen;
 
 const styles = StyleSheet.create({
   container: {

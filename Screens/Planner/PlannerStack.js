@@ -1,9 +1,9 @@
 import {createStackNavigator} from 'react-navigation';
 
-import NewsFeedScreen from './NewsFeedScreen';
+import PlannerScreen from './PlannerScreen';
 
-export default FeedStack = new createStackNavigator({
-    NewsFeed:{ screen : NewsFeedScreen},
+export default PlannerStack = new createStackNavigator({
+    PlannerScreen: { screen: PlannerScreen}
   },
 {
   headerMode: 'none',
