@@ -6,11 +6,7 @@ class MessageScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Message Screen</Text>
-        <Button
-          onPress={() =>
-            this.props.navigation.navigate('SignUpScreen')}
-          title='SignIn'
-        />
+        
       </View>
     );
   }

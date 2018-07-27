@@ -6,7 +6,7 @@ import LoginScreen from './LoginScreen';
 import ForgotScreen from './Forgot';
 
 export default  AuthStack = new createStackNavigator({
-  SignUp: { screen: SignUpScreen},
   Login: { screen: LoginScreen },
+  SignUp: { screen: SignUpScreen},
   Forgot: { screen: ForgotScreen}
 });

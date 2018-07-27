@@ -2,17 +2,33 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 class LoginScreen extends React.Component {
+
+  onLoginPress(){
+    this.props.navigation.navigate('Bottom');
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Login Screen</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <View>
+          <Text>Login Screen</Text>
+        </View>
+        <View>
         <Button
-          onPress={() =>
-            this.props.navigation.navigate('SignUpScreen')}
-          title='SignIn'
-        />
+            onPress={this.onLoginPress.bind(this)}
+            title='LogIn'
+          />
+          <Button
+            onPress={() =>
+              this.props.navigation.navigate('SignUpScreen')}
+            title='New User? SignUp'
+          />
+          <Button
+            onPress={() =>
+              this.props.navigation.navigate('SignUpScreen')}
+            title='Forgot Password?'
+          />
+        </View>
       </View>
     );
   }

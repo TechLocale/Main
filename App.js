@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ActivityIndicator,
-  AsyncStorage,
   StatusBar,
   StyleSheet,
   View,
@@ -12,18 +11,20 @@ import HomeScreenTabNavigator from './Screens/BottomBar';
 import AuthStack from './Screens/Authentication/MainAuth';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this._bootstrapAsync();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: ''
+    };
   }
 
   // Fetch the token from storage then navigate to our appropriate place
-  _bootstrapAsync = async () => {
-    const userToken = await AsyncStorage.getItem('userToken');
-
+  componentDidMount() {
+    const { user } = this.state; 
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
-    this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+    this.props.navigation.navigate(user ? 'Bottom' : 'Auth');
   };
 
   // Render any loading content that you like here
@@ -50,10 +51,10 @@ const styles = StyleSheet.create({
 export default createSwitchNavigator(
   {
     AuthLoading: App,
-    App: HomeScreenTabNavigator,
+    Bottom: HomeScreenTabNavigator,
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'App',
+    initialRouteName: 'AuthLoading',
   }
 );

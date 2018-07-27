@@ -6,11 +6,7 @@ class NotificationScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Notification Screen</Text>
-        <Button
-          onPress={() =>
-            this.props.navigation.navigate('SignUpScreen')}
-          title='SignIn'
-        />
+        
       </View>
     );
   }
