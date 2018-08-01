@@ -12,7 +12,7 @@ class NewsFeedScreen extends React.Component {
   check(){
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        
+        console.log(user)
       }
     });
   }
