@@ -1,9 +1,14 @@
-import {createDrawerNavigator} from 'react-navigation';
+import {createDrawerNavigator, createStackNavigator} from 'react-navigation';
 import AccountScreen from './AcountScreen';
+import SignOutScreen from './SignOutScreen';
 
+const InnerNavigator = new createStackNavigator({
+  Account: { screen: AccountScreen}
+})
 
 export default PlannerStack = new createDrawerNavigator({
-    AcountScreen: {screen: AccountScreen},
+  Home: {screen: InnerNavigator},
+  SignOut: { screen: SignOutScreen},     
   },
 {
   headerMode: 'none',

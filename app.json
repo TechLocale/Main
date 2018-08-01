@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+   "name": "Main",
+   "version": "0.0.0.1",
+   "slug": "main",
+   "sdkVersion": "27.0.0",
+   "ios": {
+     "bundleIdentifier": "com.lp.Main"
+   },
+   "android": {
+     "package": "com.lp.Main"
+   }
   }
 }

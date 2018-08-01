@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 
-import FeedStack from './Feed/NewsFeedScreen';
+import FeedStack from './Feed/FeedStack';
 import SocialStack from './Social/SocialStack';
 import PlannerStack from './Planner/PlannerStack';
 import BoringStack from './Boring/BoringStack';
@@ -45,6 +45,6 @@ export default HomeScreenTabNavigator = new createMaterialTopTabNavigator({
   },
   barStyle: { backgroundColor: '#33ADFF'},
   animationEnabled: true,
-  swipeEnabled: true,
+  swipeEnabled: false,
 }
 );
