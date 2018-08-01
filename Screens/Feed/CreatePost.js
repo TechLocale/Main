@@ -17,7 +17,7 @@ export default class Account extends Component {
     this.state = { id: '' };
   }
   onChooseImagePress = async () => {
-    const { id } = this.state;
+    var id = firebase.auth().currentUser.uid;
     //let result = await ImagePicker.launchCameraAsync();
     let result = await ImagePicker.launchImageLibraryAsync();
     if (!result.cancelled) {
@@ -36,7 +36,7 @@ export default class Account extends Component {
     var ref = firebase
       .storage()
       .ref()
-      .child('images/' + imageName);
+      .child('NewsFeed/' + imageName);
     return ref.put(blob);
   };
   
@@ -45,10 +45,7 @@ export default class Account extends Component {
     return (
       <View style={styles.container}>
      <View>
-      <TextInput
-          placeholder="enter id" style ={{width : 300}}
-          onChangeText={id => this.setState({ id })}
-        />
+      
         <Button bordered title="Choose image" onPress={this.onChooseImagePress} />
       </View>
       </View>
