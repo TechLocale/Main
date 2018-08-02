@@ -11,13 +11,14 @@ import {
 import { ImagePicker } from 'expo';
 import firebase from '../../API/firebase';
 
-export default class Account extends Component {
+
+class CreatePost extends Component {
   constructor(props) {
     super(props);
     this.state = { id: '' };
   }
   onChooseImagePress = async () => {
-    var id = firebase.auth().currentUser.uid;
+    const { id } = this.state;
     //let result = await ImagePicker.launchCameraAsync();
     let result = await ImagePicker.launchImageLibraryAsync();
     if (!result.cancelled) {
@@ -36,8 +37,11 @@ export default class Account extends Component {
     var ref = firebase
       .storage()
       .ref()
-      .child('NewsFeed/' + imageName);
-    return ref.put(blob);
+      .child('images/' + imageName);
+    const uploadStatusImage = await  ref.put(blob)
+    const downloadURL = await uploadStatusImage.ref.getDownloadURL();
+    console.log(downloadURL)
+    return true;
   };
   
 
@@ -45,7 +49,10 @@ export default class Account extends Component {
     return (
       <View style={styles.container}>
      <View>
-      
+      <TextInput
+          placeholder="enter id" style ={{width : 300}}
+          onChangeText={id => this.setState({ id })}
+        />
         <Button bordered title="Choose image" onPress={this.onChooseImagePress} />
       </View>
       </View>
@@ -53,6 +60,9 @@ export default class Account extends Component {
     );
   }
 }
+
+export default  CreatePost;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
