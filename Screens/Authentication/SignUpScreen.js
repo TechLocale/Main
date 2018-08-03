@@ -31,7 +31,7 @@ class SignUpScreen extends React.Component {
                 .then(() =>  {
                     this.setState({ error: '', loading: false })
                     this.props.navigation.navigate('Profile')
-                    Alert.alert('Welcome');
+                    Alert.alert('Enter Details');
                     
               },(error) =>{
                 Alert.alert(error.message);
