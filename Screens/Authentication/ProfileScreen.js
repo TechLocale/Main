@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { StyleSheet,Text, TextInput, View, Button, TouchableOpacity, Alert } from 'react-native';
+import { Text, TextInput, View, Button, TouchableOpacity, Alert } from 'react-native';
 import firebase from '../../API/firebase';
+import global from '../../Components/global';
 
 class ProfileScreen extends React.Component {
     constructor(props){
@@ -18,7 +19,6 @@ class ProfileScreen extends React.Component {
         this.setState({ error: '', loading: true });
         const {  fname, mob, city, country } = this.state;
         firebase.auth().onAuthStateChanged(function(user) {
-          console.log(user)
           user.updateProfile({
             displayName: fname,
             photoURL: "https://example.com/jane-q-user/profile.jpg"
@@ -43,7 +43,7 @@ class ProfileScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={global.container}>
         <View>
             <Text> Profile Picture here </Text>
         </View>
@@ -52,26 +52,26 @@ class ProfileScreen extends React.Component {
                     value={this.state.fname}
                     onChangeText={(fname) => this.setState({ fname })}
                     placeholder={'Full Name'}
-                    style={styles.TInput}
+                    style={global.TInput}
                     />
                     <TextInput
                         value={this.state.mob}
                         onChangeText={(mob) => this.setState({ mob })}
                         placeholder={'Mobile Number'}
                         keyboardType={'numeric'}
-                        style={styles.TInput}
+                        style={global.TInput}
                     />
                     <TextInput
                         value={this.state.city}
                         onChangeText={(city) => this.setState({city })}
                         placeholder={'City'}
-                        style={styles.TInput}
+                        style={global.TInput}
                     />
                     <TextInput
                         value={this.state.country}
                         onChangeText={(country) => this.setState({country})}
                         placeholder={'Country'}
-                        style={styles.TInput}
+                        style={global.TInput}
                     />
             </View>
         <View>
@@ -87,17 +87,3 @@ class ProfileScreen extends React.Component {
 
 export default ProfileScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  TInput: {
-    width: 300,
-    height: 44,
-    padding: 10,
-    marginBottom: 10,
-  },
-});

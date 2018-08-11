@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar, Button } from 'react-native';
 import{SearchBar} from 'react-native-elements'
 
 import firebase from '../../API/firebase';
+import global from '../../Components/global';
 
 
 class NewsFeedScreen extends React.Component {
@@ -22,7 +23,7 @@ class NewsFeedScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={global.container}>
         <View>
         <SearchBar
             round
@@ -52,10 +53,3 @@ class NewsFeedScreen extends React.Component {
 
 export default NewsFeedScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: StatusBar.currentHeight,
-    flex: 1,
-    backgroundColor: '#fff',  
-  },
-});

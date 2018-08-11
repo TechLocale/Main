@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Alert, View, Button, TextInput, KeyboardAvoidingView, ActivityIndicator} from 'react-native';
+import {  Alert, View, Button, TextInput, KeyboardAvoidingView, ActivityIndicator} from 'react-native';
 import firebase  from '../../API/firebase';
-
+import global from '../../Components/global';
 
 class SignUpScreen extends React.Component {
 
@@ -12,10 +12,6 @@ class SignUpScreen extends React.Component {
        email: '',
        pass: '',
        rpass: '',
-       fname: '',
-       mob: '',
-       city:'',
-       country:'',
        loading: false,
 
     }
@@ -24,7 +20,7 @@ class SignUpScreen extends React.Component {
   onSignUpPress() {
     this.setState({ error: '', loading: true });
      var key =  firebase.database().ref('/UsersData').push().key
-     const { email, pass, fname, mob, city, country } = this.state;
+     const { email, pass} = this.state;
     
         if(this.state.pass == this.state.rpass){
           firebase.auth().createUserWithEmailAndPassword(email, pass)
@@ -60,24 +56,24 @@ class SignUpScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={global.container}>
         <KeyboardAvoidingView behavior='padding'>
             <TextInput
                 placeholder='Enter Email'
-                style={styles.TInput}
+                style={global.TInput}
                 value={this.state.email}
                 onChangeText={ (email) => this.setState({ email })}
               />
               <TextInput
                 placeholder='Enter Password'
-                style={styles.TInput}
+                style={global.TInput}
                 value={this.state.pass}
                 onChangeText={ (pass) => this.setState({ pass })}
                 secureTextEntry={true}
               />
               <TextInput
                 placeholder='Enter Password Again'
-                style={styles.TInput}
+                style={global.TInput}
                 value={this.state.rpass}
                 onChangeText={ (rpass) => this.setState({ rpass })}
                 secureTextEntry={true}
@@ -93,17 +89,4 @@ class SignUpScreen extends React.Component {
 
 export default SignUpScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  TInput: {
-    width: 300,
-    height: 44,
-    padding: 10,
-    marginBottom: 10,
-  },
-});
+

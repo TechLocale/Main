@@ -32,6 +32,7 @@ export default class Account extends Component {
 
  
   render() {
+    console.log('Chal raah ha bhaiya')
     let { url } = this.state; 
     return (
       <View style={styles.container}>

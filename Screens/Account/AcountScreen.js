@@ -19,18 +19,18 @@ class AccountScreen extends React.Component {
     })
   }
 
-  componentDidMount(){
-    var that = this
-    var userId = firebase.auth().currentUser.uid;
-    const{ email, photo} = this.state;
-    return firebase.database().ref('/UsersData/' + userId).once('value')
-    .then(function(data) {
-      that.setState({ 
-        username:data.val().name 
-      })
-        // console.log(data.val());
-    });
-  }
+  // componentDidMount(){
+  //   var that = this
+  //   var userId = firebase.auth().currentUser.uid;
+  //   const{ email, photo} = this.state;
+  //   return firebase.database().ref('/UsersData/' + userId).once('value')
+  //   .then(function(data) {
+  //     that.setState({ 
+  //       username:data.val().name 
+  //     })
+  //       // console.log(data.val());
+  //   });
+  // }
 
   render() {
     return (

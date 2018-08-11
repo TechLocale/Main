@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Button, KeyboardAvoidingView, ActivityIndicator, Alert } from 'react-native';
+import { TextInput, View, Button, KeyboardAvoidingView, ActivityIndicator, Alert } from 'react-native';
 import firebase from '../../API/firebase';
+import global from '../../Components/global';
 
 class LoginScreen extends React.Component {
 
@@ -50,17 +51,17 @@ class LoginScreen extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={global.container}>
         <View>
           <TextInput
             placeholder='Enter Your Registered Email'
-            style={styles.TInput}
+            style={global.TInput}
             value={this.state.email}
             onChangeText={ (email) => this.setState({email})}
           />
           <TextInput
             placeholder='Enter Your Password'
-            style={styles.TInput}
+            style={global.TInput}
             value={this.state.password}
             onChangeText={ (password) => this.setState({password})}
             secureTextEntry= {true}
@@ -88,17 +89,3 @@ class LoginScreen extends React.Component {
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  TInput: {
-    width: 300,
-    height: 44,
-    padding: 10,
-    marginBottom: 10,
-  },
-});
