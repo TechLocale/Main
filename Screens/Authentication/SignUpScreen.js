@@ -20,7 +20,7 @@ class SignUpScreen extends React.Component {
   onSignUpPress() {
     this.setState({ error: '', loading: true });
      var key =  firebase.database().ref('/UsersData').push().key
-     const { email, pass} = this.state;
+     const { email, pass, rpass} = this.state;
     
         if(this.state.pass == this.state.rpass){
           firebase.auth().createUserWithEmailAndPassword(email, pass)

@@ -21,6 +21,16 @@ class NewsFeedScreen extends React.Component {
     
   }
 
+  fb(){
+    return(
+      <View>
+        <Button
+          title='test'
+        />
+      </View>
+    )
+  }
+  
   render() {
     return (
       <View style={global.container}>
@@ -45,6 +55,9 @@ class NewsFeedScreen extends React.Component {
               this.props.navigation.navigate('CreatePost')}
             title='Create Post'
           />
+        </View>
+        <View>
+          {this.fb()}
         </View>
       </View>
     );

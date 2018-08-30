@@ -8,8 +8,6 @@ import Loading from './Screens/Authentication/Loading';
 
 
 
-
-
 export default createSwitchNavigator(
   {
     AuthLoading: Loading,
@@ -17,6 +15,6 @@ export default createSwitchNavigator(
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'AuthLoading',
+    initialRouteName: 'Bottom',
   }
 );
