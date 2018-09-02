@@ -1,12 +1,12 @@
 import {createStackNavigator} from 'react-navigation';
 
 import InTrip from './InTrip';
-import Accomodation from './Accomodation';
-
+import AirBus from './List/AirBus';
 
 
 export default InTripStack = new createStackNavigator({
     
     InTrip: { screen: InTrip},
-    Accomodation: { screen: Accomodation},
+        AirBus: { screen: AirBus}
+    
 });

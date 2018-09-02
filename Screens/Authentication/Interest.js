@@ -8,6 +8,7 @@ class Interest extends React.Component{
     render(){
         return(
             <View style={global.container}>
+                
             </View>
         );
     }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, StatusBar, TouchableOpacity  } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity  } from 'react-native';
+import {deviceHeight, deviceWidth} from '../../Components/global';
+import{SearchBar} from 'react-native-elements';
 
 
 class Home extends React.Component{
@@ -9,41 +11,60 @@ class Home extends React.Component{
   render(){
     return(
       <View style={styles.container}>
-        <View style={styles.BGrid}>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>Accomodation</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>Transportaion</Text>
-        </TouchableOpacity>
+      <View>
+        <SearchBar
+            round
+            showLoading
+            lightTheme
+            searchIcon={{ size: 30 }}
+            // onChangeText={someMethod}
+            // onClear={someMethod}
+            placeholder='Type Here...' 
+          />
+        </View>
+        <View>
+          <TouchableOpacity
+            style={styles.ButtonL}
+          >
+            <Text style={{fontSize: 30, fontWeight: 'bold',color: '#EADB2C'}}>Get A Local</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.BGrid}>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>Airport/Stand</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>Parking Info</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text >Accomodation</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text>Transportation</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.BGrid}>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>History</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.ButtonG}>
-        <Text>Health/Wellness</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text>Food</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text>Things To DO</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity
-        style={styles.ButtonL}>
-        <Text style={{fontSize: 20, fontWeight: 'bold',color: '#EADB2C'}}>Get A Local</Text>
-        </TouchableOpacity>
-        
+        <View style={styles.BGrid}>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text>Health/History</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.ButtonG}
+          >
+            <Text>Packing</Text>
+          </TouchableOpacity>
+        </View>   
       </View>
     );
   }
@@ -53,25 +74,30 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 5,
-    marginTop: StatusBar.currentHeight,
-    flex: 2,
+    flex: 1
   },
   BGrid: {
+    flex:1,
     flexDirection: 'row',
-    padding: 10,
-    justifyContent: 'center',
+    
   },
   ButtonG:{
     borderRadius: 5,
-    margin: 5,
-    padding: 45,
+    alignSelf:'auto',
+    flex:1,
+    margin: 1,
+    padding: 40,
+    width: deviceWidth*0.1,
+    height: deviceHeight*0.05,
     backgroundColor: '#2C98EA',
   },
   ButtonL:{
-    borderRadius: 5,
-    padding:20,
-    alignItems: 'center',
+    padding:10,
+    marginBottom:1,
+    alignItems:'center',
+    justifyContent: 'center',
+    height: deviceHeight*0.1,
+    width: deviceWidth*0.2,
     backgroundColor: '#EA6E2C',
   },
 

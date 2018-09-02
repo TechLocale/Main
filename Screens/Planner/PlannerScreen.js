@@ -1,11 +1,30 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Button, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, StatusBar, TouchableOpacity, Image, Alert } from 'react-native';
+import {  deviceHeight, devicWidth} from '../../Components/global';
 import{SearchBar} from 'react-native-elements'
 
 class PlannerScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    title: 'Welcome to Localepal'
   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        place:'',
+    };
+}
+
+onPlace(){
+  const{place}= this.state
+  if( place=='Delhi' || place=='delhi'){
+      this.props.navigation.navigate('Home')
+  }
+  else{
+    Alert.alert('We are not present in this city');
+  }
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -15,56 +34,94 @@ class PlannerScreen extends React.Component {
             showLoading
             lightTheme
             searchIcon={{ size: 30 }}
-            // onChangeText={someMethod}
-            // onClear={someMethod}
-            placeholder='Type Here...' 
+            onChangeText={(place) => this.setState({place})}
+            onClear={(place) => this.setState({place})}
+            placeholder='Where to?' 
           />
-        </View>
-        <View>
           <Button
-          onPress={() =>
-          this.props.navigation.navigate('Create')}
-          title='Create Trip'
+          title='Search'
+          onPress={this.onPlace.bind(this)}
           />
         </View>
-        <View style={styles.ButtonGroup}>
-            <TouchableOpacity
-            style={{alignItems:'center'}}
-            onPress={() =>
-            this.props.navigation.navigate('Home')}
-            >
-            <Image style={{ width:80, height:80 , borderRadius:100, margin:5}}
-                 source={require('../../Images/home.jpg')}/>
-                 <Text>HOME</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-            style={{alignItems:'center'}}
-            onPress={() =>
-            this.props.navigation.navigate('InTrip')}
-            >
-            <Image style={{ width:80, height:80 , borderRadius:100, margin:5}}
-                 source={require('../../Images/intrip.jpg')}/>
-                 <Text>InTrip</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-            style={{alignItems:'center'}}
-            onPress={() =>
-            this.props.navigation.navigate('Home')}
-            >
-            <Image style={{ width:80, height:80 , borderRadius:100, margin:5}}
-                 source={require('../../Images/gohome.jpg')}/>
-                 <Text>Go Home</Text>
-            </TouchableOpacity>
-        </View>
-        <View>
-          <Image style={{ width:'100%', height:'60%' , borderRadius:10,}}
-             source={require('../../Images/home.jpg')}/>
-          <Button
-          title='Get A Local'
-          onPress={() =>
-          this.props.navigation.navigate('GetPal')}
-          style={styles.input}
-          />
+        <View style={{flex:1, justifyContent:'center', alignItems: 'center'}}>
+          <View style={styles.ButtonGroup}>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width: 100, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('InTrip')}
+              >
+              <Image style={{ width:150, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width:80, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+          </View>
+          <View style={styles.ButtonGroup}>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width: 100, height:150 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width:150, height:150 , borderRadius:1}}
+                  source={require('../../Images/gohome.jpg')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width:80, height:150 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+          </View>
+          <View style={styles.ButtonGroup}>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width: 100, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('InTrip')}
+              >
+              <Image style={{ width:150, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+              <TouchableOpacity
+              onPress={() =>
+              this.props.navigation.navigate('GetPal')}
+              >
+              <Image style={{ width:80, height:80 , borderRadius:1}}
+                  source={require('../../Images/giphy.gif')}/>
+                  
+              </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -81,6 +138,6 @@ const styles = StyleSheet.create({
   },
   ButtonGroup:{
     flexDirection: 'row',
-    justifyContent:'space-evenly',
+    
   },
 });

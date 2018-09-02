@@ -26,8 +26,7 @@ class SignUpScreen extends React.Component {
           firebase.auth().createUserWithEmailAndPassword(email, pass)
                 .then(() =>  {
                     this.setState({ error: '', loading: false })
-                    this.props.navigation.navigate('Profile')
-                    Alert.alert('Enter Details');
+                    this.props.navigation.navigate('Profile');
                     
               },(error) =>{
                 Alert.alert(error.message);

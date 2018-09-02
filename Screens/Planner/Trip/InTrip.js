@@ -10,13 +10,13 @@ class InTrip extends React.Component{
     return(
       <View style={styles.container}>
         <View style={styles.BGrid}>
-        <TouchableOpacity
-        style={styles.ButtonG}
-        onPress={() =>
-          this.props.navigation.navigate('Accomodation')}
-        >
-        <Text>Accomodation</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+          style={styles.ButtonG}
+          onPress={() =>
+            this.props.navigation.navigate('AirBus')}
+          >
+            <Text>Terminal</Text>
+          </TouchableOpacity>
         <TouchableOpacity
         style={styles.ButtonG}>
         <Text>Last Minute Spots</Text>
