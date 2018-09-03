@@ -15,6 +15,6 @@ export default createSwitchNavigator(
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'Bottom',
+    initialRouteName: 'Auth',
   }
 );

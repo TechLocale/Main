@@ -6,10 +6,5 @@ import CreatePost from './CreatePost';
 export default FeedStack = new createStackNavigator({
     NewsFeed:{ screen : NewsFeedScreen},
     CreatePost:{ screen: CreatePost}
-  },
-{
-  headerMode: 'none',
-    navigationOptions: {
-        headerVisible: false,
-    }
+  
 })

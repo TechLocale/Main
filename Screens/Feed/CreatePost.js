@@ -87,7 +87,6 @@ export default class CreatePost extends Component {
               style={{ width: 150, height: 250 }}
               source={{ uri: picurl} } 
             />
-            
           </View>
         </TouchableOpacity>
         <View>
@@ -99,7 +98,8 @@ export default class CreatePost extends Component {
             placeholderTextColor="black"
           />
           <Dropdown label="Category" data={data}
-          onChangeText = {category =>this.setState.data} />
+            onChangeText = {category =>this.setState.data} 
+          />
           <View style = {styles.arrange}>
           <TextInput
             placeholder="Location"
@@ -118,19 +118,6 @@ export default class CreatePost extends Component {
             onChangeText={hashtags => this.setState({ hashtags })}
           />
           </View>
-          
-          <TextInput
-            placeholder="enter id"
-            style={{ width: 300 }}
-            onChangeText={id => this.setState({ id })}
-          />
-          <Text>ghvb </Text>}
-          <Button
-            bordered
-            style ={styles.uploadbutton}
-            title="Choose image"
-            onPress={this.onChooseImagePress}
-          />
         </View>
       </View>
     </ScrollView>  
@@ -172,9 +159,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginVertical: 10,
-  },
-  uploadbutton:{
-  
   }
 });
 

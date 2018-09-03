@@ -25,6 +25,8 @@ class Home extends React.Component{
         <View>
           <TouchableOpacity
             style={styles.ButtonL}
+            onPress={() =>
+              this.props.navigation.navigate('GetPal')}
           >
             <Text style={{fontSize: 30, fontWeight: 'bold',color: '#EADB2C'}}>Get A Local</Text>
           </TouchableOpacity>
@@ -32,6 +34,8 @@ class Home extends React.Component{
         <View style={styles.BGrid}>
           <TouchableOpacity
             style={styles.ButtonG}
+            onPress={() =>
+              this.props.navigation.navigate('AirBus')}
           >
             <Text >Accomodation</Text>
           </TouchableOpacity>

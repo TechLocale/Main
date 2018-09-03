@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, Button, KeyboardAvoidingView, ActivityIndicator, Alert } from 'react-native';
+import { TextInput, View, Button, KeyboardAvoidingView, ActivityIndicator, Alert, Image } from 'react-native';
 import firebase from '../../API/firebase';
 import global from '../../Components/global';
 

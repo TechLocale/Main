@@ -22,15 +22,15 @@ export default HomeScreenTabNavigator = new createMaterialTopTabNavigator({
       const { routeName } = navigation.state;
       let iconName;
       if (routeName === 'Account') {
-        iconName = `ios-contact${focused ? '' : '-outline'}`;
+        iconName = `ios-person${focused ? '' : '-outline'}`;
       }else if (routeName === 'Boring') {
-        iconName = `ios-images${focused ? '' : '-outline'}`;
+        iconName = `ios-calendar${focused ? '' : '-outline'}`;
       }else if (routeName === 'Planner') {
         iconName = `ios-aperture${focused ? '' : '-outline'}`;
       }else if (routeName === 'Social') {
-        iconName = `ios-alert${focused ? '' : '-outline'}`;
+        iconName = `ios-notifications${focused ? '' : '-outline'}`;
       } else if (routeName === 'NewsFeed') {
-        iconName = `ios-browsers${focused ? '' : '-outline'}`;
+        iconName = `ios-globe${focused ? '' : '-outline'}`;
       }
 
       // You can return any component that you like here! We usually use an

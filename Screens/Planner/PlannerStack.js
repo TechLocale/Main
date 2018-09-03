@@ -6,6 +6,7 @@ import GetPal from './GetPal';
 import Home from './Home';
 import GoHome from './GoHome';
 import InTripStack from './Trip/InTripStack';
+import AirBus from './Trip/List/AirBus';
 
 
 export default PlannerStack = new createStackNavigator({
@@ -13,6 +14,7 @@ export default PlannerStack = new createStackNavigator({
     Create: { screen: Create},
     GetPal: { screen:GetPal},
     Home: {screen: Home},
+        AirBus: {screen: AirBus},
     InTrip: { screen: InTripStack},
     GoHome: { screen: GoHome},
 })
