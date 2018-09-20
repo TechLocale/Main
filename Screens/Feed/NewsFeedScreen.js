@@ -29,9 +29,10 @@ class NewsFeedScreen extends React.Component {
     super(props);
 
     this.state = { 
-      id: '', url: null,
+      id: '', 
+      url: null,
       dataSource: [],
-      isLoading:true 
+      isLoading:true
     };
   }
 
@@ -39,64 +40,64 @@ class NewsFeedScreen extends React.Component {
 
   }
   renderItem = ({item, i}) =>{
-    return (
-      <View style={{ flex:1, marginBottom:5, backgroundColor:'#f2f2f2'}}>
-        <View>
-          <ListItem
-          key={i}
-          roundAvatar
-          avatar={{uri:item.image}}
-          />
-          <Image style={{ width:'100%', height:400}}
-              source={{uri: item.image}}/>
-            <TouchableOpacity>
-              <View style={{margin:15}}>
-                <Text style={{fontWeight:'bold', fontSize: 18}}>
-                  Title to Attract Viewers
-                </Text>
-                <View style={{flexDirection: 'row'}}>
-                <Text style={{ fontSize: 18}}>
-                  Anandi Chole Bhature ,Kalkaji 
-                </Text>
-              </View>
-              <View style={{flex:1,flexDirection:'row'}}>
-                <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
-                <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
-                <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
-                <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
-                <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
-              </View>
-                <Text>
-                  {item.author}
-                </Text>
-                <Text style={{marginBottom: 10}}>
-                  The idea with React Native Elements is more about component structure than actual design.
-                  The idea with React Native Elements is more about component structure than actual design.
-                </Text>
-                <View style={{flex:1,flexDirection:'row', justifyContent: 'space-evenly'}}>
-                  <Text>
-                    4 Planned
+        return (
+          <View style={{ flex:1, marginBottom:5, backgroundColor:'#f2f2f2'}}>
+          <View>
+            <ListItem
+            key={i}
+            roundAvatar
+            avatar={{uri:item.image}}
+            />
+            <Image style={{ width:'100%', height:400}}
+                source={{uri: item.image}}/>
+              <TouchableOpacity>
+                <View style={{margin:15}}>
+                  <Text style={{fontWeight:'bold', fontSize: 18}}>
+                    Title to Attract Viewers
                   </Text>
-                  <TouchableOpacity>
-                    <Text style={{padding: 10}}>
-                      View Comments
-                    </Text>
-                  </TouchableOpacity>
                   <View style={{flexDirection: 'row'}}>
-                  <Text style={{paddingRight:4}}>
-                    200
+                  <Text style={{ fontSize: 18}}>
+                    Anandi Chole Bhature ,Kalkaji 
                   </Text>
-                  <View >
-                  <Ionicons name={'ios-heart'} size={18} color={'#fff4d'} />
-                  </View>
-                  </View>
                 </View>
-                
-              </View>
-            </TouchableOpacity>
+                <View style={{flex:1,flexDirection:'row'}}>
+                  <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
+                  <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
+                  <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
+                  <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
+                  <Ionicons name={'ios-star'} size={30} color={'#fff4d'} />
+                </View>
+                  <Text>
+                    {item.author}
+                  </Text>
+                  <Text style={{marginBottom: 10}}>
+                    The idea with React Native Elements is more about component structure than actual design.
+                    The idea with React Native Elements is more about component structure than actual design.
+                  </Text>
+                  <View style={{flex:1,flexDirection:'row', justifyContent: 'space-evenly'}}>
+                    <Text>
+                      4 Planned
+                    </Text>
+                    <TouchableOpacity>
+                      <Text style={{padding: 10}}>
+                        View Comments
+                      </Text>
+                    </TouchableOpacity>
+                    <View style={{flexDirection: 'row'}}>
+                    <Text style={{paddingRight:4}}>
+                      200
+                    </Text>
+                    <View >
+                    <Ionicons name={'ios-heart'} size={18} color={'#fff4d'} />
+                    </View>
+                    </View>
+                  </View>
+                  
+                </View>
+              </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    )
+     )
   }
   renderSeparater = () => {
     return (
@@ -223,6 +224,7 @@ class NewsFeedScreen extends React.Component {
                 backgroundColor:'#1a8cff' , 
                 padding: 10, width: deviceWidth*0.4, 
                 borderRadius:10, margin:5, 
+
                 alignItems:'center', 
                 justifyContent:'center'}}>
               <Text style={{fontSize:20}}>
